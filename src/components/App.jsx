@@ -18,6 +18,11 @@ import Register from "../pages/Register/Register";
 const App = () => {
     const [user, setUser] = useState(undefined);
 
+    //Logout function
+    const logout = () => {
+        setUser(undefined);
+        localStorage.clear();
+    };
 
     return(
         <>
@@ -34,8 +39,8 @@ const App = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-12">
-                            <span>User Name and Image</span>
-                            <Link to='/user/login'> <button>Logout</button> </Link>
+                            <span>{user.firstName + ' ' + user.lastName}</span>
+                            <Link to='/'><button onClick={logout}>Logout</button></Link>
                         </div>
                     </div>
                 </div>

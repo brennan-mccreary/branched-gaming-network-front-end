@@ -3,7 +3,8 @@ import React from 'react';
 import { 
     Link,
     Route,
-    Routes } from 'react-router-dom';
+    Routes, 
+    useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
@@ -14,12 +15,14 @@ import useForm from "../../CustomHooks/useForm";
 
 //Stateless Functional Component
 const Login = (props) => {
+    let navigate = useNavigate();
     const { formValues, handleChange, handleSubmit } = useForm(login);
 
-    //Login callback
+    //Login callback -- runs on handleSubmit
     function login() {
         postExistingUser(formValues);
-    }
+        navigate('/');
+    };
 
     //HTTP Requests
     //POST Existing User
