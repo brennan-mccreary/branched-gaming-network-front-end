@@ -6,9 +6,7 @@ import {
     Routes } from 'react-router-dom';
 
 //Import components/pages
-import Community from "../Community/Community";
-import Explore from "../Explore/Explore";
-import Roots from "../Roots/Roots";
+
 
 //Stateless functional component
 const Home = (props) => {
