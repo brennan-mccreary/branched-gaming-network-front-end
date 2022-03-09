@@ -17,6 +17,7 @@ import Register from "../pages/Register/Register";
 //Stateless functional component
 const App = () => {
     const [user, setUser] = useState(undefined);
+    
 
     //Logout function
     const logout = () => {
