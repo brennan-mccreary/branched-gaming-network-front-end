@@ -1,15 +1,33 @@
 //Imports
 import React, {useState, useEffect} from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import api from '../../api';
 
 const PartnersList = (props) => {
-    
-    //Declare partners
+    let ids;
+
+    //Declare stateful variables
+    const [stream, setStream] = useState(undefined);
     const [partners, setPartners] = useState(undefined);
 
+    //Compile partner id's
+    const compilePartnerList = async (data) => {
+        ids = data.map((el) => {
+            return ('user_id=' + el.user_id)
+        })
+
+        ids = ids.toString().replaceAll(',', '&');
+        console.log(ids);
+        
+        if(ids !== '') {
+            getLiveStreams(ids);
+        }
+    }
+    
     //Run on startup
     useEffect(() => {
         getPartners();
+        
     }, []);
 
     //HTTP Requests
@@ -19,12 +37,41 @@ const PartnersList = (props) => {
             .get('http://localhost:5003/api/partners/')
             .then((res) => {
                 setPartners(res.data);
+                compilePartnerList(res.data);
+            })
+    };
+
+    //GET Live streams
+    const getLiveStreams = async (users) => {
+        await api
+            .get(`https://api.twitch.tv/helix/streams?${users}`)
+            .then((res) => {
+                setStream(`https://player.twitch.tv/?channel=${res.data.data[0].user_login}&parent=localhost`) 
+                
             })
     };
 
     return ( 
-        <>
+        <>  
             <div className="container">
+                Stream Viewer
+                {!stream ?
+                <div>
+                    No Streams Live at the Moment
+                </div>
+                :
+                <div>
+                    <iframe
+                        src={stream}
+                        height="720"
+                        width="1280"
+                        allowFullScreen={false}
+                        title='twitch'
+                        id='twitch-iframe'>
+                    </iframe>
+                </div>
+                }
+        
                 Partners List
                 <div className="row">
                     {!partners ? 
