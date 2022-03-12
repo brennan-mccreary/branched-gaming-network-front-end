@@ -13,6 +13,7 @@ import Explore from "../pages/Explore/Explore";
 import Roots from "../pages/Roots/Roots";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Admin from "../pages/Admin/Admin";
 
 //Stateless functional component
 const App = () => {
@@ -27,53 +28,43 @@ const App = () => {
 
     return(
         <>
-            {/* selectively render login/register/logout section based on user existence status */}
-            {!user ? 
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xs-6 col-sm-4 col-md-6">
-                            <Link to='/user/login'> <button>Login</button> </Link>
-                        </div>
-                    </div>
-                </div>
-            :
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xs-12">
-                            <span>{user.firstName + ' ' + user.lastName}</span>
-                            <Link to='/'><button onClick={logout}>Logout</button></Link>
-                        </div>
-                    </div>
-                </div>
-            }
+            
             
             {/* Routes for each main page */}
             <Routes>
                 <Route exact path='/'
                     element={
                         <Home
-                        
+                            user={user}
+                            setUser={setUser}
+                            logout={logout}
                         />
                     }/>
 
                 <Route path='/explore'
                     element={
                         <Explore 
-                        
+                            user={user}
+                            setUser={setUser}
+                            logout={logout}
                         />
                     }/>
 
                 <Route path='/community'
                     element={
                         <Community 
-                        
+                            user={user}
+                            setUser={setUser}
+                            logout={logout}
                         />
                     }/>
 
                 <Route path='/roots'
                     element={
                         <Roots
-                        
+                            user={user}
+                            setUser={setUser}
+                            logout={logout}
                         />
                     }/>
 
@@ -82,6 +73,7 @@ const App = () => {
                         <Login
                             user={user}
                             setUser={setUser}
+                            logout={logout}
                         />
                     }/>
 
@@ -90,6 +82,16 @@ const App = () => {
                         <Register
                             user={user}
                             setUser={setUser}
+                            logout={logout}
+                        />
+                    }/>
+                
+                <Route exact path='/admin'
+                    element={
+                        <Admin
+                            user={user}
+                            setUser={setUser}
+                            logout={logout}
                         />
                     }/>
             </Routes> 

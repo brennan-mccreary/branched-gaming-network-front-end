@@ -1,7 +1,7 @@
 //Imports
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import api from '../../api';
+import api from '../../api-twitch';
 
 const PartnersList = (props) => {
     let ids;

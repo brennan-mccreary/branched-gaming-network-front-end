@@ -12,6 +12,24 @@ import {
 const Home = (props) => {
     return ( 
         <>
+            {/* selectively render login/register/logout section based on props.user existence status */}
+            {!props.user ? 
+                <div>
+                    <Link to='/user/login'><button>Login</button></Link>
+                </div>
+            :
+                <div>
+                    <span>{props.user.firstName + ' ' + props.user.lastName}</span>
+                    <Link to='/'><button onClick={props.logout}>Logout</button></Link>
+                    {props.user.isAdmin === true ? 
+                    <Link to='/admin'><button>Admin Panel</button></Link>
+                    :
+                    null
+                    }
+                </div>
+            }
+
+
             Home
 
             <div className="container">
