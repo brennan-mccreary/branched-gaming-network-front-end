@@ -5,6 +5,7 @@ import {
     Route,
     Routes } from 'react-router-dom';
 import CalendarView from '../../components/CalendarView/CalendarView';
+import PollsList from '../../components/PollsList/PollsList';
 
 //Stateless functional component
 const Community = (props) => {
@@ -40,14 +41,17 @@ const Community = (props) => {
             <div className="container">
                 <div className="row">
                     <div className="col-sm-4 col-md-5 col-lg-4">
-                        Updates
+
                     </div>
                     <div className="col-sm-8 col-md-7 col-lg-5">
-                        Calendar
-                        <CalendarView/>
+                        {/* <CalendarView/> */}
                     </div>
                     <div className="col-lg-3">
-                        Polls
+                        <PollsList
+                            user={props.user}
+                            setUser={props.setUser}
+                            logout={props.logout}
+                        />
                     </div>
                 </div>
             </div>
