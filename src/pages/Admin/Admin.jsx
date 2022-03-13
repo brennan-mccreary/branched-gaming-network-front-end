@@ -11,6 +11,7 @@ import {
 import RemovePartner from '../../components/RemovePartner/RemovePartner';
 import AddPartner from '../../components/AddPartner/AddPartner';
 import CreatePoll from '../../components/CreatePoll/CreatePoll';
+import EditPoll from '../../components/EditPoll/EditPoll';
 
 //Import hooks
 import useForm from "../../CustomHooks/useForm"
@@ -97,13 +98,12 @@ const Community = (props) => {
 
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-4">
+                        <div className="col-md-6">
                             <CreatePoll/>
+                            <EditPoll/>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-6">
                             <AddPartner/>
-                        </div>
-                        <div className="col-md-4">
                             <RemovePartner/>
                         </div>
                     </div>
