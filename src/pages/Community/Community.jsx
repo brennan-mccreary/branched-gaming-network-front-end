@@ -51,6 +51,8 @@ const Community = (props) => {
                             user={props.user}
                             setUser={props.setUser}
                             logout={props.logout}
+                            pollId={props.pollId} 
+                            setPollId={props.setPollId}
                         />
                     </div>
                 </div>

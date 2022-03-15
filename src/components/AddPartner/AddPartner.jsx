@@ -42,23 +42,7 @@ const AddPartner = (props) => {
     }
 
     function create() {
-        
-        // let id = getTwitchUserId(formValues.username)
         getTwitchUserId(formValues.username);
-        
-        // form.append('test', 'hello')
-        
-        // let form = {
-        //     username: formValues.username,
-        //     firstName: formValues.firstName,
-        //     lastName: formValues.lastName,
-        //     image: file,
-        //     user_id: 'id'
-        // } 
-
-        // console.log(id)
-        // console.log(form);
-        // postNewPartner(id);
         navigate('/admin');
     }
 

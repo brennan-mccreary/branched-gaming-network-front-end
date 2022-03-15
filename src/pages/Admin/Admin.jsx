@@ -11,19 +11,14 @@ import {
 import RemovePartner from '../../components/RemovePartner/RemovePartner';
 import AddPartner from '../../components/AddPartner/AddPartner';
 import CreatePoll from '../../components/CreatePoll/CreatePoll';
-import EditPoll from '../../components/EditPoll/EditPoll';
 
-//Import hooks
-import useForm from "../../CustomHooks/useForm"
 
 //Stateless functional component
 const Community = (props) => {
-    let navigate = useNavigate();
-    const { formValues, handleChange, handleSubmit } = useForm(undefined);
 
     return ( 
         <>
-           {props.user == undefined || props.user === false ?
+           {props.user === undefined || props.user === false ?
             <div>
                 Admin Access Only
             </div>
@@ -100,7 +95,6 @@ const Community = (props) => {
                     <div className="row">
                         <div className="col-md-6">
                             <CreatePoll/>
-                            <EditPoll/>
                         </div>
                         <div className="col-md-6">
                             <AddPartner/>

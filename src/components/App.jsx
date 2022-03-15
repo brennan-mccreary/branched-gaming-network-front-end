@@ -14,11 +14,11 @@ import Roots from "../pages/Roots/Roots";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Admin from "../pages/Admin/Admin";
-
+import EditPoll from './EditPoll/EditPoll';
 //Stateless functional component
 const App = () => {
     const [user, setUser] = useState(undefined);
-    
+    const [pollId, setPollId] = useState(undefined);
 
     //Logout function
     const logout = () => {
@@ -32,6 +32,10 @@ const App = () => {
             
             {/* Routes for each main page */}
             <Routes>
+               
+                <Route exact path='/community/edit-poll' element={<EditPoll pollId={pollId} setPollId={setPollId}/>}></Route>
+             
+
                 <Route exact path='/'
                     element={
                         <Home
@@ -56,6 +60,8 @@ const App = () => {
                             user={user}
                             setUser={setUser}
                             logout={logout}
+                            pollId={pollId} 
+                            setPollId={setPollId}
                         />
                     }/>
 
