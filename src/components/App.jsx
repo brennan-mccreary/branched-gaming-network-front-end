@@ -5,6 +5,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import './App.css';
 
 //Import Components/Pages
 import Home from "../pages/Home/Home"
@@ -15,6 +16,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Admin from "../pages/Admin/Admin";
 import EditPoll from './EditPoll/EditPoll';
+
 //Stateless functional component
 const App = () => {
     const [user, setUser] = useState(undefined);
@@ -27,9 +29,7 @@ const App = () => {
     };
 
     return(
-        <>
-            
-            
+        <div className='app-bg'>
             {/* Routes for each main page */}
             <Routes>
                
@@ -101,7 +101,7 @@ const App = () => {
                         />
                     }/>
             </Routes> 
-        </>    
+        </div>    
     )
 }
 

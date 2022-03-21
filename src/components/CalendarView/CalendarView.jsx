@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import axios from 'axios';
 import { gcalKey } from '../../api-gcal';
 import { calId } from '../../api-gcal';
+import './CalendarView.css';
 
 const CalendarView = (props) => {
     const [events, setEvents] = useState(undefined);
@@ -49,6 +50,8 @@ const CalendarView = (props) => {
                     plugins={[dayGridPlugin ]}
                     initialView="dayGridMonth"
                     events={events}
+                    eventColor='rgb(87, 155, 87)'
+                    eventTextColor='black'
                 />
             :
             null

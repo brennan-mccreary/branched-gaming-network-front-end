@@ -6,12 +6,13 @@ import {
     Route,
     Routes, 
     useNavigate } from 'react-router-dom';
+import './Admin.css';
 
 //Import Components/Pages
 import RemovePartner from '../../components/RemovePartner/RemovePartner';
 import AddPartner from '../../components/AddPartner/AddPartner';
 import CreatePoll from '../../components/CreatePoll/CreatePoll';
-
+import NavBar from '../../components/NavBar/NavBar';
 
 //Stateless functional component
 const Community = (props) => {
@@ -24,84 +25,27 @@ const Community = (props) => {
             </div>
            :
            <div>
-                {/* selectively render login/register/logout section based on props.user existence status */}
-                {!props.user ? 
-                    <div>
-                        <Link to='/user/login'><button>Login</button></Link>
-                        <Link to='/'><button>Home</button></Link>
-                        <Link to='/explore'><button>Explore</button></Link>
-                        <Link to='/community'><button>Dashboard</button></Link>
-                        <Link to='/roots'><button>About</button></Link>
-                    </div>
-                :
-                    <div>
-                        <span>{props.user.firstName + ' ' + props.user.lastName}</span>
-                        <Link to='/'><button onClick={props.logout}>Logout</button></Link>
-                        <Link to='/'><button>Home</button></Link>
-                        <Link to='/explore'><button>Explore</button></Link>
-                        <Link to='/community'><button>Dashboard</button></Link>
-                        <Link to='/roots'><button>About</button></Link>
-                        {props.user.isAdmin === true ? 
-                        <Link to='/admin'><button>Admin Panel</button></Link>
-                        :
-                        null
-                        }
-                    </div>
-                }
-
-                Admin access panel
-
-                <>
-                    {/* <Link to='create-poll/'><button>Create Poll</button></Link>
-                    <Link to='edit-poll'><button>Edit Poll</button></Link>
-                    <Link to='add-partner'><button>Add Partner</button></Link>
-                    <Link to='remove-partner'><button>Remove Partner</button></Link> */}
-
-                    {/* <div>
-                        <Routes>
-                            <Route exact path='/create-poll'
-                                element={
-                                    <EditPoll
-                                        
-                                    />
-                                }/>
-
-                            <Route path='/edit-poll'
-                                element={
-                                    <EditPoll 
-                                        
-                                    />
-                                }/>
-
-                            <Route path='/add-partner'
-                                element={
-                                    <EditPoll 
-                                        
-                                    />
-                                }/>
-
-                            <Route path='/remove-partner'
-                                element={
-                                    <EditPoll
-                                        
-                                    />
-                                }/>
-                        </Routes> 
-                    </div> */}
-                </>
+                <NavBar 
+                    user={props.user}
+                    setUser={props.setUser}
+                    logout={props.logout}
+                />
                 
-
                 <div className="container">
-                    <div className="row">
+                    <div className="row row-spacer">
                         <div className="col-md-6">
                             <CreatePoll/>
                         </div>
                         <div className="col-md-6">
                             <AddPartner/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sx-12">
                             <RemovePartner/>
                         </div>
                     </div>
-                </div>
+                </div>    
            </div>
            }
 

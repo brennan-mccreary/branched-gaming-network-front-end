@@ -1,0 +1,56 @@
+.home-container {
+    height: 100vh;
+}
+
+.img-cards-container {
+    padding-top: 7.5rem;
+}
+
+.img-cards {
+    width: 100%;
+    height: auto;
+    border: 10px solid rgb(87, 155, 87);
+    border-radius: 5px;
+    transition: all .2s ease-in-out; 
+    background-color: rgb(87, 155, 87);
+}
+
+.img-cards:hover {
+    transform: scale(1.05);
+}
+
+.img-cards-home {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+
+.nav-button-content {
+    padding-top: 1rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: right;
+}
+
+.nav-button {
+    background-color: rgb(87, 155, 87);
+    border: 1px solid black;
+}
+
+.nav-button:hover {
+    background-color: rgb(18, 51, 18);
+}
+
+.nav-user-info {
+    color: rgb(179, 185, 179);
+    font-size: 1.5rem;
+    padding-right: 2rem;
+}
+
+.home-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 1rem 1rem;
+    background-image: url('https://static.wixstatic.com/media/f49e15_bef77944190a4e0a830c6b6be4065caa~mv2.png/v1/crop/x_0,y_35,w_715,h_614/fill/w_132,h_113,al_c,usm_0.66_1.00_0.01,enc_auto/Logo_NEW.png' );
+}

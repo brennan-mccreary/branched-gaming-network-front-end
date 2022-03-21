@@ -1,0 +1,33 @@
+.nav-btn {
+    text-decoration: none;
+    text-decoration-color: none;
+}
+
+.nav-container {
+    font-size: 1.5rem;
+}
+
+.nav-header {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: 2rem;
+}
+
+.nav-icon {
+    width: 2.5rem;
+    height: 3rem;
+    padding-bottom: .5rem;
+}
+
+.nav-icon-wrapper {
+    background-color: rgba(83, 83, 83, 0.246);
+    border-radius: 300px;
+    transition: all .1s ease-in-out;
+}
+
+.nav-icon-wrapper:hover {
+    background-color: rgba(83, 83, 83, 0.246);
+    border-radius: 300px;
+    border: 2px solid aliceblue;
+    transform: scale(1.2);
+}

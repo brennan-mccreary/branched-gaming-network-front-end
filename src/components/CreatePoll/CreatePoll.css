@@ -1,0 +1,22 @@
+.poll-content {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 2rem;
+}
+
+.poll-header {
+    color: rgb(87, 155, 87);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.poll-btn {
+    background-color: rgb(87, 155, 87);
+    border: 1px solid black;
+}
+
+.poll-btn:hover {
+    background-color: rgb(18, 51, 18);
+}

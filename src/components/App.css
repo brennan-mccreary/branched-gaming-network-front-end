@@ -1,0 +1,9 @@
+.bg {
+    background: rgb(13,54,6);
+    background: radial-gradient(circle, rgba(13,54,6,1) 0%, rgba(7,57,0,1) 48%, rgba(0,0,0,1) 100%); 
+    height: 100%;
+}
+
+/* .app-bg {
+    padding-bottom: 10.41rem;
+} */

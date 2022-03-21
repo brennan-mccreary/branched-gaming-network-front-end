@@ -4,66 +4,55 @@ import {
     Link,
     Route,
     Routes } from 'react-router-dom';
-
-//Import components/pages
-
+import './Home.css';
 
 //Stateless functional component
 const Home = (props) => {
     return ( 
-        <>
+        <div className='home-container home-bg'>
             {/* selectively render login/register/logout section based on props.user existence status */}
             {!props.user ? 
-                <div>
-                    <Link to='/user/login'><button>Login</button></Link>
+                <div className='nav-button-content'>
+                    <Link to='/user/login'><button className='btn btn-success nav-button'>Login</button></Link>
                 </div>
             :
-                <div>
-                    <span>{props.user.firstName + ' ' + props.user.lastName}</span>
-                    <Link to='/'><button onClick={props.logout}>Logout</button></Link>
+                <div className='nav-button-content'>
+                    <span className='nav-user-info'>{props.user.firstName + ' ' + props.user.lastName}</span>
+                    <Link to='/'><button className='btn btn-success nav-button' onClick={props.logout}>Logout</button></Link>
                     {props.user.isAdmin === true ? 
-                    <Link to='/admin'><button>Admin Panel</button></Link>
+                    <Link to='/admin'><button className='btn btn-success nav-button'>Admin Panel</button></Link>
                     :
                     null
                     }
                 </div>
             }
 
-
-            Home
-
             <div className="container">
                 <div className="row">
-                    <div className="col-sm-4">
-                        <div>
-                            card 1
-                        </div>
-    
-                        <Link to='explore'>
-                            <button>Explore Creators</button>
-                        </Link>
+                    <div className="col-sm-4  img-cards-container">
+                        <div className='img-cards'>
+                            <Link to='explore'>
+                                <img className='img-cards-home' src={require("../../images/BGN-Explore.png")} alt="Explore Creators" />
+                            </Link>
+                        </div> 
                     </div>
-                    <div className="col-sm-4">
-                        <div>
-                            card 2
+                    <div className="col-sm-4  img-cards-container">
+                        <div className='img-cards'>
+                            <Link to='community'>
+                                <img className='img-cards-home' src={require("../../images/BGN-Community.png")} alt="Explore Creators" />
+                            </Link>
                         </div>
-
-                        <Link to='community'>
-                            <button>Community Dashboard</button>
-                        </Link>
                     </div>
-                    <div className="col-sm-4">
-                        <div>
-                            card 3
+                    <div className="col-sm-4  img-cards-container">
+                        <div className='img-cards'>
+                            <Link to='roots'>
+                                <img className='img-cards-home' src={require("../../images/BGN-Roots.png")} alt="Explore Creators" />
+                            </Link>
                         </div>
-                        
-                        <Link to='roots'>
-                            <button>Our Roots</button>
-                        </Link>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
 
 
      );

@@ -1,0 +1,10 @@
+.partner-image-select {
+    color: rgb(87, 155, 87);
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+}
+
+.partner-image-select-header {
+    margin-right: 1rem;
+}

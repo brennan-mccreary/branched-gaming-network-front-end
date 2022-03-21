@@ -42,32 +42,34 @@ const Register = (props) => {
     
     return ( 
         <>
-            <div>
-            <h2>Register a new account</h2>
-            <form className="register-user" onSubmit={handleSubmit}>
-                <div className="input-group mb-3" >
-                    <span className="input-group-text" id="basic-addon3">First Name: </span>
-                    <input name='firstName' value={formValues.firstName} onChange={handleChange} type="text" className="form-control" aria-label="First Name" aria-describedby="basic-addon1" />
-                </div>
+            <div className='login-content'>
+                <div className="login-content-box">
+                    <h1 className='login-header'>Register now!</h1>
+                    <form className="register-user" onSubmit={handleSubmit}>
+                        <div className="input-group mb-3" >
+                            <span className="input-group-text" id="basic-addon3">First Name: </span>
+                            <input name='firstName' value={formValues.firstName} onChange={handleChange} type="text" className="form-control" aria-label="First Name" aria-describedby="basic-addon1" />
+                        </div>
 
-                <div className="input-group mb-3">
-                    <span className="input-group-text" id="basic-addon4">Last Name: </span>
-                    <input name='lastName' value={formValues.lastName} onChange={handleChange} type="text" className="form-control" aria-label="Last Name" aria-describedby="basic-addon2" />
-                </div>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text" id="basic-addon4">Last Name: </span>
+                            <input name='lastName' value={formValues.lastName} onChange={handleChange} type="text" className="form-control" aria-label="Last Name" aria-describedby="basic-addon2" />
+                        </div>
 
-                <div className="input-group mb-3">
-                    <span className="input-group-text" id="basic-addon5">Email: </span>
-                    <input name='email' value={formValues.email} onChange={handleChange} type="text" className="form-control" aria-label="New Email" aria-describedby="basic-addon1" />
-                </div>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text" id="basic-addon5">Email: </span>
+                            <input name='email' value={formValues.email} onChange={handleChange} type="text" className="form-control" aria-label="New Email" aria-describedby="basic-addon1" />
+                        </div>
 
-                <div className="input-group mb-3">
-                    <span className="input-group-text" id="basic-addon6">Password: </span>
-                    <input name='password' value={formValues.password} onChange={handleChange} type="password" className="form-control" aria-label="New Password" aria-describedby="basic-addon1" />
+                        <div className="input-group mb-3">
+                            <span className="input-group-text" id="basic-addon6">Password: </span>
+                            <input name='password' value={formValues.password} onChange={handleChange} type="password" className="form-control" aria-label="New Password" aria-describedby="basic-addon1" />
+                        </div>
+                        <div>
+                            <button type="submit" className="btn btn-primary login-btn">Register</button>
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <button type="submit" className="btn btn-primary">Create</button>
-                </div>
-            </form>
         </div>
         </>
      );

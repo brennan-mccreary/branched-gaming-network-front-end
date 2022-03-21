@@ -1,0 +1,85 @@
+.twitch .twitch-video {
+    padding-top: 56.25%;
+    position: relative;
+    border: 4px solid black;
+    background-color: black;
+    border-radius: 5px;
+    height: 0;
+}
+  
+.twitch .twitch-video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 5px;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: auto;
+}
+
+.placeholder {
+    display: flex;
+    justify-content: center;
+}
+
+.partners-header {
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: aliceblue;
+    padding-bottom: 1.5rem;
+}
+
+.partners-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    border: 5px solid rgb(34, 80, 34);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+.card-container {
+    width: auto;
+}
+
+.card-group {
+    width: 250px;
+    border: 2px solid black;
+    background-color: rgb(42, 42, 42);
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: rgb(42, 42, 42);
+    transition: all .2s ease-in-out; 
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+.card-group .card-text {
+    color: aliceblue;
+}
+
+.card-group .card-title {
+    color: aliceblue;
+}
+
+.card-group .card-img-top {
+    height: 250px;
+}
+
+.card-group .card-anchor {
+    text-decoration: none;
+    color: inherit;
+}

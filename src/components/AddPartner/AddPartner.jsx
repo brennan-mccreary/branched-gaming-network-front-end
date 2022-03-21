@@ -6,6 +6,7 @@ import {
     Routes, 
     useNavigate } from 'react-router-dom';
 import api from '../../api-twitch';
+import './AddPartner.css';
 
 //Import hooks
 import useForm from "../../CustomHooks/useForm"
@@ -77,8 +78,9 @@ const AddPartner = (props) => {
 
     return ( 
         <>
-            <div>
-                Add Partner
+            <div className="poll-header">Add Partner</div>
+                <div className='poll-content'>
+                
                 <form className="register-user" onSubmit={handleSubmit}>
                     <div className="input-group mb-3" >
                         <span className="input-group-text" id="basic-addon3">Username: </span>
@@ -94,19 +96,19 @@ const AddPartner = (props) => {
                         <span className="input-group-text" id="basic-addon5">Last Name: </span>
                         <input name='lastName' value={formValues.lastName} onChange={handleChange} type="text" className="form-control"/>
                     </div>
-
-                    Image:
-                    <input
-                        id='upload-image-form'
-                        ref = {filePickerRef}
-                        type = "file"
-                        accept = ".jpg,.jpeg,.png"
-                        onChange = {pickedHandler}
-                    />
-                        
+                    <div className='partner-image-select'>
+                        <p className='partner-image-select-header'>Image:</p>
+                        <input
+                            id='upload-image-form'
+                            ref = {filePickerRef}
+                            type = "file"
+                            accept = ".jpg,.jpeg,.png"
+                            onChange = {pickedHandler}
+                        />
+                    </div>
 
                     <div>
-                        <button type="submit" className="btn btn-primary">Create</button>
+                        <button type="submit" className="btn btn-primary poll-btn">Create</button>
                     </div>
                 </form>
             </div>

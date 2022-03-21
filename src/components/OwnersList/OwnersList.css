@@ -1,0 +1,24 @@
+.owner-title {
+    color: aliceblue;
+    text-align: center;
+}
+
+.owner-text {
+    color: aliceblue;
+}
+
+.owner-card {
+    margin-bottom: 1rem;
+    width: 12rem;
+}
+
+.owner-container {
+    display: grid;
+    justify-content: center;
+}
+
+.owner-header {
+    text-align: center;
+    color: aliceblue;
+    font-size: 2rem;
+}

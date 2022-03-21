@@ -7,6 +7,7 @@ import {
     useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
+import './Login.css';
 
 //Import components/pages
 
@@ -42,29 +43,29 @@ const Login = (props) => {
     return (
         <>
         {!props.user ? 
-            <>
-                <h2>Welcome Back!</h2>
-                <form className="login" onSubmit={handleSubmit}>
-                    <div className="input-group mb-3">
-                        <span className="input-group-text" id="basic-addon1">Email: </span>
-                        <input name='email' value={formValues.email} onChange={handleChange} type="text" className="form-control" aria-label="Email" aria-describedby="basic-addon1" />
-                    </div>
+            <div className="login-content">
+                <div className="login-content-box">
+                    <h1 className='login-header'>Welcome Back!</h1>
+                    <form className="" onSubmit={handleSubmit}>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text" id="basic-addon1">Email: </span>
+                            <input name='email' value={formValues.email} onChange={handleChange} type="text" className="form-control"/>
+                        </div>
 
-                    <div className="input-group mb-3">
-                        <span className="input-group-text" id="basic-addon2">Password: </span>
-                        <input name='password' value={formValues.password} onChange={handleChange}  type="password" className="form-control" aria-label="Password" aria-describedby="basic-addon1" />
-                    </div>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text" id="basic-addon2">Password: </span>
+                            <input name='password' value={formValues.password} onChange={handleChange}  type="password" className="form-control"/>
+                        </div>
+                        <div>
+                            <button type="submit" className="btn btn-success login-btn">Login</button>
+                        </div>
+                    </form>
                     <div>
-                        <button type="submit" className="btn btn-primary">Login</button>
+                        <h5 className='login-footer'>Don't Have an Account? <Link to="/user/register">Register</Link></h5> 
                     </div>
-                </form>
-                <div>
-                    <h3>Don't Have an Account?</h3>
-                    <li>
-                        <Link to="/user/register">Register</Link>
-                    </li>
                 </div>
-            </>
+                
+            </div>
         : 
             <>
                 You're already logged in, guber

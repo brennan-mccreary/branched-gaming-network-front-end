@@ -5,6 +5,7 @@ import {
     Route,
     Routes, 
     useNavigate } from 'react-router-dom';
+import './CreatePoll.css';
 
 //Import hooks
 import useForm from "../../CustomHooks/useForm"
@@ -42,10 +43,10 @@ const CreatePoll = (props) => {
     }
 
     return ( 
-        <>
-            <div>
-                Create Poll
-                <form className="register-user" onSubmit={handleSubmit}>
+        <>  
+            <div className="poll-header">Create Poll</div>
+            <div className='poll-content'>
+                <form className="register-user " onSubmit={handleSubmit}>
                     <div className="input-group mb-3" >
                         <span className="input-group-text" id="basic-addon3">Title: </span>
                         <input name='title' value={formValues.title} onChange={handleChange} type="text" className="form-control" aria-label="First Name" aria-describedby="basic-addon1" />
@@ -71,7 +72,7 @@ const CreatePoll = (props) => {
                         <input name='option4' value={formValues.option4} onChange={handleChange} type="text" className="form-control" aria-label="New Password" aria-describedby="basic-addon1" />
                     </div>
                     <div>
-                        <button type="submit" className="btn btn-primary">Create</button>
+                        <button type="submit" className="btn btn-primary poll-btn">Create</button>
                     </div>
                 </form>
             </div>

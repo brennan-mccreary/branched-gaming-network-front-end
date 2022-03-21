@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
+import './RemovePartner.css';
 
 const RemovePartner = (props) => {
     const [partners, setPartners] = useState(undefined);
@@ -37,10 +38,7 @@ const RemovePartner = (props) => {
 
     return ( 
         <>
-            <div>
-                Remove Partner
-                <div className="">
-                    <div className="">
+                    <div className="remove-partner-container">
                         {!partners ? 
                         <>
                             Create Partners to display them here.
@@ -49,8 +47,8 @@ const RemovePartner = (props) => {
                         <>
                             {partners.map((el, i) => 
                                 <div className="" key={i}>
-                                    <div className="card-group">
-                                        <div className="card">
+                                    <div className="card-group remove-partner-card">
+                                        <div className="card ">
                                             <img src={`http://localhost:5003/${el.image}`} className="card-img-top" alt='...'/>
                                             <div className="card-body">
                                                 <h5 className="card-title">{el.username}</h5>
@@ -60,7 +58,7 @@ const RemovePartner = (props) => {
                                                 <small className="text-muted">Status</small>
                                             </div>
                                             <div>
-                                                <button id={el._id} className='btn-danger' onClick={delPartner}>Delete Partner</button>
+                                                <button id={el._id} className='btn btn-danger remove-partner-btn' onClick={delPartner}>Delete Partner</button>
                                             </div>
                                         </div>
                                     </div>
@@ -69,8 +67,6 @@ const RemovePartner = (props) => {
                         </>
                         }
                     </div>
-                </div>
-            </div>
         </>
      );
 }
